@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Customer } from 'src/app/customer';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -8,6 +9,7 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class CustomersComponent implements OnInit {
   customers:any;
+  customer = new Customer;
 
   constructor(private dataService:DataService) { }
 
@@ -24,7 +26,12 @@ export class CustomersComponent implements OnInit {
   }
 
   insertData(){
-    console.log('Hello')
+    //console.log('Hello');
+    //console.log(this.customer);
+    this.dataService.insertData(this.customer).subscribe(res => {
+      //console.log(res);
+      this.getCustomerData();
+    });
   }
 
 }
