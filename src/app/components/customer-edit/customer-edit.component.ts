@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Customer } from 'src/app/customer';
 import { DataService } from 'src/app/service/data.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class CustomerEditComponent implements OnInit {
   id:any;
+  data:any;
+  customer = new Customer();
 
   constructor(private route:ActivatedRoute, private dataServices: DataService) { }
 
@@ -20,7 +23,9 @@ export class CustomerEditComponent implements OnInit {
 
   getData(){
     this.dataServices.getCustomerById(this.id).subscribe(res => {
-      console.log(res);
+      //console.log(res);
+      this.data = res;
+      this.customer = this.data;
     })
   }
 
