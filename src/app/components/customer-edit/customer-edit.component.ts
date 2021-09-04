@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataService } from 'src/app/service/data.service';
 
 @Component({
   selector: 'app-customer-edit',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer-edit.component.css']
 })
 export class CustomerEditComponent implements OnInit {
+  id:any;
 
-  constructor() { }
+  constructor(private route:ActivatedRoute, private dataServices: DataService) { }
 
   ngOnInit(): void {
+    //console.log(this.route.snapshot.params.id);
+    this.id = this.route.snapshot.params.id;
+    this.getData();
+  }
+
+  getData(){
+    this.dataServices.getCustomerById(this.id).subscribe(res => {
+      console.log(res);
+    })
   }
 
 }

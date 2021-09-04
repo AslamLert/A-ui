@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
 import { CustomerEditComponent } from './components/customer-edit/customer-edit.component';
 
 const appRoutes: Routes = [
-  {path: '', component: CustomersComponent}
+  {path: '', component: CustomersComponent},
+  {path: 'edit/:id', component:CustomerEditComponent}
 ];
 
 
