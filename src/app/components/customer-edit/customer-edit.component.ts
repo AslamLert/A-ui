@@ -29,4 +29,10 @@ export class CustomerEditComponent implements OnInit {
     })
   }
 
+  updateCustomer() {
+    this.dataServices.updateCustomer(this.id, this.customer).subscribe(res => {
+
+    })
+  }
+
 }
