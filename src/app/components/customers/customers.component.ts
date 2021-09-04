@@ -34,4 +34,11 @@ export class CustomersComponent implements OnInit {
     });
   }
 
+  deleteData(id:any){
+    //console.log(id);
+    this.dataService.deleteData(id).subscribe(res => {
+      this.getCustomerData();
+    })
+  }
+
 }

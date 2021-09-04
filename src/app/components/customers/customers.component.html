@@ -21,6 +21,7 @@
       <th scope="col">Name</th>
       <th scope="col">Email</th>
       <th scope="col">Salary</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
@@ -29,6 +30,7 @@
       <td>{{ cus.name }}</td>
       <td>{{ cus.email }}</td>
       <td>{{ cus.salary }}</td>
+      <td><button class="btn btn-danger btn-sm" (click)="deleteData(cus.id)">Delete</button></td>
     </tr>
   </tbody>
 </table>
