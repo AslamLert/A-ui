@@ -23,4 +23,8 @@ export class CustomersComponent implements OnInit {
     });
   }
 
+  insertData(){
+    console.log('Hello')
+  }
+
 }
