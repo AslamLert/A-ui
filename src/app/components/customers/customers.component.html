@@ -1,1 +1,18 @@
-<p>customers works!</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cus of customers"> <!--customers from array customers.c.ts-->
+      <th scope="row">{{ cus.id }}</th>
+      <td>{{ cus.name }}</td>
+      <td>{{ cus.email }}</td>
+      <td>{{ cus.salary }}</td>
+    </tr>
+  </tbody>
+</table>
